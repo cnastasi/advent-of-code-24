@@ -1,0 +1,4 @@
+vendor/
+assets/
+.idea/
+composer.lock

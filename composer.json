@@ -1,0 +1,18 @@
+{
+  "autoload": {
+    "psr-4": {
+      "DevDojo\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "DevDojo\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^8.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.4"
+  }
+}
