@@ -49,7 +49,7 @@ readonly class Matrix
             || $myMatrix->equalsTo($m3)
             || $myMatrix->equalsTo($m4);
 
-        echo "{$m1} | {$m2} | {$m3} | {$m4} => {$myMatrix} [$match]\n";
+        // echo "{$m1} | {$m2} | {$m3} | {$m4} => {$myMatrix} [$match]\n";
 
         return $match;
     }

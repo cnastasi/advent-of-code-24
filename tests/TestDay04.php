@@ -78,7 +78,7 @@ use PHPUnit\Framework\TestCase;
             "MAMMMXMMMM\n" .
             "MXMXAXMASX\n", 18];
 
-        yield 'real input' => [file_get_contents(__DIR__ . '/input_day_04.txt'), 2603];
+        yield 'real input' => [file_get_contents(__DIR__ . '/../assets/input_day_04.txt'), 2603];
     }
 
     public static function dataProvider2()

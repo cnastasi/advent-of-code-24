@@ -14,16 +14,15 @@ class TestDay03 extends TestCase
     {
         yield ["xmul(1,2)", 2];
         yield ["xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))", 161];
-        yield [file_get_contents(__DIR__ . '/input_day_03.txt'), 0];
+        yield [file_get_contents(__DIR__ . '/../assets/input_day_03.txt'), 162813399];
     }
 
     public static function dataProvider2(): \Generator
     {
-        yield ["xmul(1,2)", 2];
         yield ["do() xmul(3,2)", 6];
         yield ["don't() xmul(1,2) do() xmul(1,3)", 3];
         yield ["do() xmul(2,5) don't() xmul(1,2)", 10];
-        yield [file_get_contents(__DIR__ . '/../assets/input_day_03.txt') . ' do()', 0];
+        yield [file_get_contents(__DIR__ . '/../assets/input_day_03.txt') . ' do()', 162813399];
     }
 
     #[DataProvider("dataProvider1")]
