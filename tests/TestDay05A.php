@@ -43,6 +43,10 @@ class TestDay05A extends TestCase
         $engine->addRule('4|2');
         $engine->addRule('2|5');
         $engine->addRule('5|6');
+        $engine->addRule('2|3');
+        $engine->addRule('2|5');
+
+        $engine->findNode('1')->debug();
 
         Assert::assertEquals(true, $engine->hasPath(['1', '4', '3', '2', '5', '6']));
     }
@@ -60,9 +64,9 @@ class TestDay05A extends TestCase
         $node3 = $engine->findNode(3);
         $node4 = $engine->findNode(4);
 
-        Assert::assertSame(4, $node1->getScore());
-        Assert::assertSame(2, $node2->getScore());
-        Assert::assertSame(1, $node3->getScore());
-        Assert::assertSame(1, $node4->getScore());
+        Assert::assertSame(3, $node1->getScore('1'));
+        Assert::assertSame(2, $node2->getScore('2'));
+        Assert::assertSame(1, $node3->getScore('3'));
+        Assert::assertSame(1, $node4->getScore('4'));
     }
 }

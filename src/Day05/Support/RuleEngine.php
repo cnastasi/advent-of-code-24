@@ -44,13 +44,8 @@ class RuleEngine
     {
         $first = array_shift($path);
 
-        if ($this->hasNode($first)) {
-            $node = $this->getNode($first);
-
-            return $node->hasPath($path);
-        }
-
-        return false;
+        $node = $this->findNode($first);
+        return $node?->hasPath($path) ?? false;
     }
 
     public function orderByScore(array $path): array
@@ -59,7 +54,6 @@ class RuleEngine
 
 //        echo "Path: " . implode(',', $path) . "\n";
 //        echo "Memory used: " . memory_get_usage(true) / 1024 / 1024 . "\n";
-
 
 
         foreach ($path as $value) {

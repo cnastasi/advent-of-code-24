@@ -164,7 +164,7 @@ class TestDay05 extends TestCase
 
         $result = Exercise02::execute($rules, $paths);
 
-        Assert::assertSame(0, $result);
+        Assert::assertSame(4787, $result);
     }
 
 

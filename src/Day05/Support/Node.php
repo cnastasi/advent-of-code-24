@@ -53,19 +53,36 @@ class Node
     {
         $myScore = 1;
 
-        if ($this->lastVisit !== $uuid) {
-         //   echo "Visiting: {$this->value}\n";
+        $this->lastVisit = $uuid;
 
-            $this->lastVisit = $uuid;
-
-            foreach ($this->children as $child) {
-                $myScore += $child->getScore($uuid);
-            }
+        foreach ($this->children as $child) {
+            $myScore += $this->firstVisit($uuid) ? $child->getScore($uuid) : 1;
         }
 //        else {
 //            echo "Visiting: {$this->value} AGAIN!\n";
 //        }
 
         return $myScore;
+    }
+
+    private function firstVisit(string $uuid): bool
+    {
+        return ($this->lastVisit !== $uuid);
+    }
+
+    public function debug(string $uuid = null, string $offset = '')
+    {
+        $uuid ??= (string)rand(1, 4096);
+
+        echo "{$offset} | {$this->value}\n";
+
+        if ($this->lastVisit == $uuid)
+            return;
+
+        $this->lastVisit = $uuid;
+
+        foreach ($this->children as $child) {
+            $child->debug($uuid, $offset . '   ');
+        }
     }
 }
